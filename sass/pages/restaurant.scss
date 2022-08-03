@@ -1,0 +1,169 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "../utils/colors";
+@use "../utils/animations";
+
+@keyframes quarter-spin{
+    0%{
+        transform: rotate(-270deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+body{ 
+    background-color: colors.$lightergrey;
+    
+}
+#page-resto{
+    header{
+        &:hover::before {
+            
+            @include mixins.transfrom-zoom($zoom-level: 1.2,$transformation: translateY(-50%));
+        }
+        &::before{
+            @include mixins.font-awesome($font-weight: 900);
+            content: "\f060";
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            transition: transform 200ms;
+
+        }
+        
+    }
+  
+    .banner img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center ; /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
+        display: block;
+        height: 70vh;
+        
+        
+    }
+    
+    .resto__title {
+        margin-top: -3.5rem;
+        h2{
+        font-family: "Shrikhand", "cursive";
+        padding: 2rem 1rem;
+        @include mixins.heart-animated;
+        border-radius: 2rem 2rem 0 0 ;
+        background-color: colors.$lightergrey;
+    
+    }
+}
+    
+    .resto-main{
+        padding: 2rem 1rem;
+    }
+    .menus{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        @media (max-width: variables.$breakpoint){
+            grid-template-columns: 1fr;
+        }
+        h3{
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+            margin-bottom: 1rem;
+            &::after{
+                content: "";
+                position: absolute;
+                height: 0.25rem;
+                width: 2.95rem;
+                top: 1.5rem;
+                left: 0;
+                background-color: colors.$color-tertiaire;
+            }
+        }
+        .menus__category{
+            overflow: hidden;
+
+            .menu-item{
+                $numberOfItems: 3;
+                @for $i from 1 through $numberOfItems{
+                    &:nth-chelid(#{$i}) {
+                        animation-delay: 100ms * $i ;
+                    }
+                }
+                border-radius: 1rem;
+                background-color: white;
+                display: flex;
+                margin: 0.5rem;
+                overflow: hidden;
+                @include mixins.box-shadow;
+                animation: appear 1s;
+                animation-fill-mode: both;
+
+                .menu-item__price{
+                    display: flex;
+                    align-items: flex-end;
+                    margin-left:auto ;
+                    font-weight: 900;
+                    padding: 1rem;
+                }
+                .menu-item__description{
+                    padding: 1rem;
+                    overflow: hidden;
+                    h4,
+                    p{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .menu-item__check{
+                    display: grid;
+                    place-items: center;
+                    flex-shrink: 0;
+                    $button-width: 4rem;
+                    border-radius: 0 1rem 1rem 0;
+                    background-color: colors.$color-tertiaire;
+                    margin-right: -1 * $button-width;
+                    width: $button-width;
+                    transition: margin-right .5s;
+                    
+                    i{  
+                        $size: 1.6rem;
+                        color: colors.$color-tertiaire;
+                        display: grid;
+                        place-items: center;
+                        background: white;
+                        height: $size;
+                        width: $size;
+                        border-radius: 1rem;
+                    }
+                    
+                }
+                &:hover {
+                    cursor: pointer;
+                    .menu-item__check{
+                    margin-right: 0;
+                    }
+                    i{
+                        @include animations.quarter-spin;
+                        animation: quarter-spin .5s ease-in-out ;
+                    }
+                }
+            }   
+        }
+    }
+
+    section.order{
+        height: 30vh;
+        display: grid;
+        place-items: center;
+        button{
+            @include mixins.base-button;
+        }
+
+    }
+}
+

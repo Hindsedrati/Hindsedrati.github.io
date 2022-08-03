@@ -1,0 +1,26 @@
+{
+  "name": "ohmyfood1",
+  "version": "1.0.0",
+  "description": "Mon projet OC 3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style.scss style.css",
+    "build": "postcss style.css -u autoprefixer -o ./build/style.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hindsedrati/ohmyfood.git"
+  },
+  "author": "Hind SEDRATI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hindsedrati/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/Hindsedrati/ohmyfood#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.9"
+  }
+}

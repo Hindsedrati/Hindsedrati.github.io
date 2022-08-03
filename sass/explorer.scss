@@ -1,0 +1,56 @@
+@use "../sass/utils/mixins";
+@use "../sass/utils/colors";
+
+.explorer{
+    text-align: center;
+    margin: 2rem;
+    & h2{
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+    & p{
+        font-size: 1rem;
+    }
+& button{
+        @include mixins.base-button;
+        font-size: 1rem;
+}
+}
+
+.loader{
+    $animation-duration: 1s;
+    $animation-count: 2;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #ffff;
+    opacity: 0.9;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    animation: disappear 200ms $animation-duration*$animation-count forwards;
+    transform-origin: top;
+    &::after{
+        content: "";
+        height: 100px;
+        width: 100px;
+        border-right: 5px solid transparent;
+        border-top: 5px solid colors.$purple;
+        border-radius: 50%;
+        animation: spin $animation-duration infinite ease-in-out;
+        animation-iteration-count: $animation-count;
+    }
+
+}
+
+@keyframes disappear{
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg)
+    }
+}

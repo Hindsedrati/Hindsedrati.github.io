@@ -1,0 +1,64 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "../utils/colors";
+
+.fonc{
+    padding: 2px;
+}
+
+.tuto{
+    counter-reset: steps;
+    margin-bottom: 2rem;
+    background-color: white;
+    padding: 2rem 7rem;
+    & ol{
+        display: flex;
+        gap: 2rem;
+        list-style-type: none;
+        @media (max-width: variables.$breakpoint){
+            flex-direction: column;
+        }
+    }
+    
+    
+    & li{
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::before{
+            content: counter(steps);
+            counter-increment: steps;
+            color: white;
+            background-color: colors.$purple;
+            height: 2 * variables.$base-height;
+            width: 2 * variables.$base-height;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -0.75 * variables.$base-height ;
+
+        }
+        list-style-type: none;
+        background-color: #F6F6F6;
+        padding: 1.5rem 2rem;
+        flex-grow: 1;
+        border-radius: 1rem;
+        @include mixins.box-shadow;
+        &:hover{
+            @include mixins.transfrom-zoom;
+            background-color: lighten(colors.$purple, 35%);
+            i::before{
+                color: colors.$purple;
+            }
+        }
+        & i.fas{
+            margin-right: 1rem;
+            color: colors.$lightgrey;
+            
+        }
+    }
+    
+}
