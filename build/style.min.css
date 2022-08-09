@@ -71,7 +71,7 @@ header {
   margin: 1rem;
 }
 .explorer p {
-  font-size: 1rem;
+  font-weight: 900;
 }
 .explorer button {
   color: white;
@@ -340,15 +340,15 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  transition: transform 200ms;
-}
+  transition: tansform 200ms;
+}*/
 #page-resto .banner img {
   width: 100%;
   object-fit: cover;
   object-position: center;
   /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
   display: block;
-  height: 70vh;
+  height: 65vh;
 }
 #page-resto .resto__title {
   margin-top: -3.5rem;
@@ -473,6 +473,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: small;
 }
 #page-resto .menus .menus__category .menu-item .menu-item__check {
   display: grid;
@@ -514,6 +515,7 @@ body {
   height: 30vh;
   display: grid;
   place-items: center;
+  
 }
 #page-resto section.order button {
   color: white;
