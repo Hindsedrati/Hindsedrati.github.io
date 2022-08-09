@@ -2,14 +2,15 @@
 @use "../sass/utils/colors";
 
 .explorer{
-    text-align: center;
+    text-align: left;
     margin: 2rem;
     & h2{
         font-size: 1.5rem;
         margin: 1rem;
     }
     & p{
-        font-size: 1rem;
+        //font-size: 1rem;
+        font-weight: 300;
     }
 & button{
         @include mixins.base-button;
