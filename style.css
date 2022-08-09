@@ -15,7 +15,7 @@ body {
 main {
   padding: 0 7rem;
 }
-@media (max-width: 1000px) {
+@media (min-width: 64rem) {
   main {
     padding: 0 1rem;
   }
@@ -62,8 +62,49 @@ header {
   font-size: 1rem;
 }
 
+@mixin font-awesome ($font-weight: 400){
+  font-family: "Font Awesome 5 Free";
+  font-weight: $font-weight;
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  
+}
+@mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+  content: "\f004";
+  
+  @include font-awesome($font-weight);
+  font-size: 2rem;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: $opacity;
+  transition: all 200ms ease-in-out;
+}
+@mixin heart-animated {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+  &::before {
+    @include heart;
+  }
+  &::after {
+    @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+    @include gradient;
+  }
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
 .explorer {
-  text-align: center;
+  text-align: left;
   margin: 2rem;
 }
 .explorer h2 {
@@ -71,7 +112,7 @@ header {
   margin: 1rem;
 }
 .explorer p {
-  font-size: 1rem;
+  font-weight: 400;
 }
 .explorer button {
   color: white;
@@ -97,11 +138,12 @@ header {
   position: fixed;
   display: grid;
   place-items: center;
-  background-color: #ffff;
+  background-color: white;
   opacity: 0.9;
   height: 100vh;
   inset: 0;
   z-index: 1;
+  -webkit-animation: disappear 200ms 2s forwards;
   animation: disappear 200ms 2s forwards;
   transform-origin: top;
 }
@@ -112,13 +154,26 @@ header {
   border-right: 5px solid transparent;
   border-top: 5px solid #9356DC;
   border-radius: 50%;
+  -webkit-animation: spin 1s infinite ease-in-out;
   animation: spin 1s infinite ease-in-out;
+  -webkit-animation-iteration-count: 2;
   animation-iteration-count: 2;
+}
+
+@-webkit-keyframes disappear {
+  to {
+    transform: scale(0);
+  }
 }
 
 @keyframes disappear {
   to {
     transform: scale(0);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 @keyframes spin {
@@ -141,7 +196,7 @@ header {
   gap: 2rem;
   list-style-type: none;
 }
-@media (max-width: 1000px) {
+@media (max-width: 64rem) {
   .tuto ol {
     flex-direction: column;
   }
@@ -193,7 +248,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-@media (max-width: 1000px) {
+@media (min-width: 1024px) {
   #homepage .menus .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -217,11 +272,12 @@ header {
   padding-bottom: 1rem;
 }
 #homepage .menus .card__image {
-  height: 15rem;
+  height: 50rem;
   width: 100%;
   border-radius: 1rem 1rem 0 0;
   background-size: cover;
   background-position: center;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 #homepage .menus .card__description {
@@ -229,57 +285,21 @@ header {
   background-color: white;
   border-radius: 0 0 1rem 1rem;
 }
-#homepage .menus .card__description::before {
-  content: "\f004";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-size: 2rem;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-#homepage .menus .card__description::after {
-  content: "\f004";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-size: 2rem;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms ease-in-out;
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
-}
-#homepage .menus .card__description:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
 #homepage .menus .card__description h3,
 #homepage .menus .card__description p {
   padding: 0.3rem;
 }
+#homepage .menus .card__description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: #353535;
   padding: 1rem 2rem;
   color: white;
@@ -289,8 +309,19 @@ footer h2 {
   font-weight: 300;
   padding: 1rem 0;
 }
-footer p {
-  padding: 0.3rem;
+footer .indent {
+  padding: 1rem 0;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes appear {
@@ -301,6 +332,14 @@ footer p {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@-webkit-keyframes quarter-spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 @keyframes quarter-spin {
@@ -315,32 +354,29 @@ body {
   background-color: #F6F6F6;
 }
 
+#page-resto header::before{
+    content: "\f060";
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 200ms;
+    @include mixins.font-awesome($font-weight: 900);
+    
+  }
+
+
 #page-resto header:hover::before {
   transform: translateY(-50%) scale(1.2);
 }
-#page-resto header::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  content: "\f060";
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  transition: transform 200ms;
-}
 #page-resto .banner img {
   width: 100%;
+  height: 65vh;
+  -o-object-fit: cover;
   object-fit: cover;
-  object-position: center;
-  /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
+  -o-object-position: center;
+  object-position: center; /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
   display: block;
-  height: 70vh;
 }
 #page-resto .resto__title {
   margin-top: -3.5rem;
@@ -348,56 +384,8 @@ body {
 #page-resto .resto__title h2 {
   font-family: "Shrikhand", "cursive";
   padding: 2rem 1rem;
-  position: relative;
-  background-color: white;
-  border-radius: 0 0 1rem 1rem;
   border-radius: 2rem 2rem 0 0;
   background-color: #F6F6F6;
-}
-#page-resto .resto__title h2::before {
-  content: "\f004";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-size: 2rem;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-#page-resto .resto__title h2::after {
-  content: "\f004";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-size: 2rem;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms ease-in-out;
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
-}
-#page-resto .resto__title h2:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
 }
 #page-resto .resto-main {
   padding: 2rem 1rem;
@@ -407,7 +395,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-@media (max-width: 1000px) {
+@media (min-width: 1024px) {
   #page-resto .menus {
     grid-template-columns: 1fr;
   }
@@ -437,16 +425,21 @@ body {
   margin: 0.5rem;
   overflow: hidden;
   box-shadow: 2px 1px 8px -3px #7e7e7e;
+  -webkit-animation: appear 1s;
   animation: appear 1s;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 #page-resto .menus .menus__category .menu-item:nth-chelid(1) {
+  -webkit-animation-delay: 100ms;
   animation-delay: 100ms;
 }
 #page-resto .menus .menus__category .menu-item:nth-chelid(2) {
+  -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
 #page-resto .menus .menus__category .menu-item:nth-chelid(3) {
+  -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
 #page-resto .menus .menus__category .menu-item .menu-item__price {
@@ -492,6 +485,7 @@ body {
   margin-right: 0;
 }
 #page-resto .menus .menus__category .menu-item:hover i {
+  -webkit-animation: quarter-spin 0.5s ease-in-out;
   animation: quarter-spin 0.5s ease-in-out;
 }
 @keyframes quarter-spin {
@@ -506,6 +500,7 @@ body {
   height: 30vh;
   display: grid;
   place-items: center;
+  padding: 2rem;
 }
 #page-resto section.order button {
   color: white;
@@ -524,6 +519,4 @@ body {
 #page-resto section.order button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
