@@ -9,8 +9,8 @@
         margin: 1rem;
     }
     & p{
-        font-size: 4rem;
-        font-weight: 900;
+        font-size: 1.30rem;
+        font-weight: 100;
     }
 & button{
         @include mixins.base-button;
