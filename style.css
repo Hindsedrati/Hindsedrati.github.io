@@ -15,7 +15,7 @@ body {
 main {
   padding: 0 7rem;
 }
-@media (min-width: 64rem) {
+/*@media (min-width: 64rem)*/ {
   main {
     padding: 0 1rem;
   }
@@ -516,4 +516,4 @@ body {
 #page-resto section.order button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-}/*# sourceMappingURL=style.css.map */
+}
