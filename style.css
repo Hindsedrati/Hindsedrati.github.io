@@ -193,7 +193,7 @@ header {
   gap: 2rem;
   list-style-type: none;
 }
-@media (max-width: 64rem) {
+@media (min-width: 64rem) {
   .tuto ol {
     flex-direction: column;
   }
@@ -245,7 +245,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   #homepage .menus .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
