@@ -11,7 +11,7 @@
         display: flex;
         gap: 2rem;
         list-style-type: none;
-        @media (min-width: variables.$breakpoint){
+        @media (max-width: 1000px ){
             flex-direction: column;
         }
     }
@@ -58,4 +58,3 @@
     }
     
 }
-
