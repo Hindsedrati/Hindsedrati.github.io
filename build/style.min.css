@@ -17,7 +17,7 @@ main {
 }
 @media (min-width: 1000px) {
   main {
-    padding: 0 1rem;
+/*padding: 0 1rem; */
   }
 }
 
