@@ -12,10 +12,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-main {
-  padding: 0 7rem;
-}
+
 @media (min-width: 1000px) {
+    main {
+  padding: 0 1rem; 
+  }
 }
 
 h1,
