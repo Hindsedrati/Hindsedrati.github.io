@@ -90,7 +90,7 @@ body{
             .menu-item{
                 $numberOfItems: 3;
                 @for $i from 1 through $numberOfItems{
-                    &:nth-chelid(#{$i}) {
+                    &:nth-child(#{$i}) {
                         animation-delay: 100ms * $i ;
                     }
                 }
