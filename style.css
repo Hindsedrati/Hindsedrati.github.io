@@ -112,8 +112,7 @@ header {
   margin: 1rem;
 }
 .explorer p {
-  font-size: 1.30rem;
-  font-weight: 100;
+  font-weight: 400;
 }
 .explorer button {
   color: white;
@@ -249,7 +248,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-@media (min-width: 1024px){
+/*@media (min-width: 1024px) */{
   #homepage .menus .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
