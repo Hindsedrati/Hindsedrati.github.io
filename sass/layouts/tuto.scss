@@ -10,12 +10,12 @@
     counter-reset: steps;
     margin-bottom: 2rem;
     background-color: white;
-    padding: 2rem 0rem;
+    padding: 2rem;
     & ol{
         display: flex;
         gap: 2rem;
         list-style-type: none;
-        @media (max-width: variables.$breakpoint){
+        @media (min-width: variables.$breakpoint){
             flex-direction: column;
         }
     }
