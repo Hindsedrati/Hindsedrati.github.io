@@ -112,8 +112,8 @@ header {
   margin: 1rem;
 }
 .explorer p {
-font-size: 1.30rem;
-  font-weight: 400;
+  font-size: 1.30rem;
+  font-weight: 100;
 }
 .explorer button {
   color: white;
