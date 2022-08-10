@@ -427,15 +427,15 @@ body {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-#page-resto .menus .menus__category .menu-item:nth-chelid(1) {
+#page-resto .menus .menus__category .menu-item:nth-child(1) {
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-chelid(2) {
+#page-resto .menus .menus__category .menu-item:nth-child(2) {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-chelid(3) {
+#page-resto .menus .menus__category .menu-item:nth-child(3) {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
