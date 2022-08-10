@@ -15,7 +15,7 @@ body {
 main {
   padding: 0 7rem;
 }
-@media (min-width: 64rem){
+@media (min-width: 64rem) {
   main {
     padding: 0 1rem;
   }
@@ -112,8 +112,7 @@ header {
   margin: 1rem;
 }
 .explorer p {
-  font-size:1.30rem;
-  font-weight: 100;
+  font-weight: 400;
 }
 .explorer button {
   color: white;
@@ -182,18 +181,22 @@ header {
     transform: rotate(360deg);
   }
 }
+.fonc {
+  padding: 2px;
+}
+
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
   background-color: white;
-  padding: 2rem 0rem;
+  padding: 2rem 7rem;
 }
 .tuto ol {
   display: flex;
   gap: 2rem;
   list-style-type: none;
 }
-@media (min-width: 64rem) {
+@media (max-width: 64rem) {
   .tuto ol {
     flex-direction: column;
   }
@@ -245,7 +248,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-@media (min-width: 64rem) {
+/*@media (min-width: 1024px) */{
   #homepage .menus .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -427,15 +430,15 @@ body {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(1) {
+#page-resto .menus .menus__category .menu-item:nth-chlid(1) {
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(2) {
+#page-resto .menus .menus__category .menu-item:nth-chlid(2) {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(3) {
+#page-resto .menus .menus__category .menu-item:nth-chlid(3) {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
@@ -516,4 +519,4 @@ body {
 #page-resto section.order button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-}
+}/*# sourceMappingURL=style.css.map */
