@@ -369,7 +369,7 @@ body {
 }
 #page-resto .banner img {
   width: 100%;
-  height: 65vh;
+  height: 55vh;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
