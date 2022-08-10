@@ -14,7 +14,7 @@ body{
 
 main{
     padding: 0 7rem;
-    @media (max-width:1024px){
+    @media (min-width:64rem){
         padding: 0 1rem;
     }
 }
