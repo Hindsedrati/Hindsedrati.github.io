@@ -1,35 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Shrikhand&display=swap');
+@use "../utils/variables";
+@use "../utils/colors";
+@use "../utils/mixins";
 
-
-*,
-::before,
-::after{
-    box-sizing: border-box;
-}
-body{
-    margin: 0px;
-    font-family: "Roboto", sans-serif; 
-}
-
-main{
-    padding: 0 7rem;
-     @media (max-width:1000px){
-        padding: 0 1rem;
+#homepage{
+    .menus {
+        background-color: #f6f6f6;
+        margin-bottom: 2rem;
+        
+        
+        .menus__cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            @media (min-width: variables.$breakpoint) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .new {
+                position: relative;
+            }
+            .new::before {
+                content: "Nouveau";
+                position: absolute;
+                height: 2rem;
+                width: 5rem;
+                background-color: colors.$color-tertiaire;
+                color: darken(colors.$color-tertiaire, 50%);
+                display: grid;
+                place-items: center;
+                right: 1rem;
+                top: 1rem;
+            }
+        }
+        .cuisine{
+            padding-bottom: 1rem;
+        }
+        
+        .card {
+            &__image {
+                height: 50rem;
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+                background-size: cover;
+                background-position: center;
+                object-fit: cover;
+                
+            }
+            
+            &__description {
+                position: relative;
+                background-color: white;
+                border-radius: 0 0 1rem 1rem;
+                // @include mixins.heart-animated;
+                h3,
+                p {
+                    padding: 0.3rem;
+                }
+                i{
+                    font-size: 2rem;
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
     }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p{
-    padding: 0;
-    margin: 0;
-}
-a{
-    text-decoration: none;
-    color: inherit;
 }
