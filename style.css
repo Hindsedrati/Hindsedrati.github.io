@@ -182,10 +182,6 @@ header {
     transform: rotate(360deg);
   }
 }
-.fonc {
-  padding: 2px;
-}
-
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
