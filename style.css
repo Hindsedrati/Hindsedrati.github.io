@@ -12,9 +12,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-main {
-  padding: 0 7rem;
-}
+
 @media (min-width: 64rem) {
   main {
      padding: 0 7rem;
