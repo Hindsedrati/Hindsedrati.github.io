@@ -495,7 +495,7 @@ body {
   }
 }
 #page-resto section.order {
-  height: 30vh;
+  height: 15vh;
   display: grid;
   place-items: center;
   padding: 2rem;
