@@ -493,7 +493,7 @@ body {
   }
 }
 #page-resto section.order {
-  height: 15vh;
+  height: 30vh;
   display: grid;
   place-items: center;
   padding: 2rem;
