@@ -360,8 +360,7 @@ body {
     font-size: 20px;
     transition: transform 200ms;
     @include mixins.font-awesome($font-weight: 900);
-    
-  }
+}
 
 
 #page-resto header:hover::before {
@@ -373,7 +372,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
-  object-position: center; /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
+  object-position: center; 
   display: block;
 }
 #page-resto .resto__title {
