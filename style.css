@@ -13,7 +13,7 @@ body {
 }
 
 
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
   main {
      padding: 0 7rem;
   }
@@ -194,7 +194,8 @@ header {
   gap: 2rem;
   list-style-type: none;
 }
-@media (min-width: 64rem){
+
+/*@media (min-width: 1024px)*/{
 .tuto ol {
     flex-direction: column;
   }
