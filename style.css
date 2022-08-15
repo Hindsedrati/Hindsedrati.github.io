@@ -194,9 +194,11 @@ header {
   gap: 2rem;
   list-style-type: none;
 }
+@media (min-width: 64rem){
 .tuto ol {
     flex-direction: column;
- }
+  }
+}
 
 .tuto li {
   position: relative;
