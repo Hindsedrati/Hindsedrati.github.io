@@ -194,7 +194,7 @@ header {
   gap: 2rem;
   list-style-type: none;
 }
-@media (min-width: ) {
+@media (min-width:1024px ) {
   .tuto ol {
     flex-direction: column;
   }
@@ -246,7 +246,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-/*@media (min-width: 1024px) */{
+@media (min-width: 1024px) {
   #homepage .menus .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -428,15 +428,15 @@ body {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-#page-resto .menus .menus__category .menu-item:nth-chlid(1) {
+#page-resto .menus .menus__category .menu-item:nth-child(1) {
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-chlid(2) {
+#page-resto .menus .menus__category .menu-item:nth-child(2) {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-chlid(3) {
+#page-resto .menus .menus__category .menu-item:nth-child(3) {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
