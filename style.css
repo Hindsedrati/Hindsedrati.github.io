@@ -12,10 +12,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-
-/*@media (min-width: 1024px)*/ {
+main {
+  padding: 0 7rem;
+}
+@media (min-width: 64rem) {
   main {
-     padding: 0 7rem;
+    padding: 0 1rem;
   }
 }
 
@@ -179,28 +181,26 @@ header {
     transform: rotate(360deg);
   }
 }
-.fonc {
+.fonc {  
   padding: 2px;
-}
+}  
 
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
   background-color: white;
-  padding: 2rem 7rem;
+  padding: 2rem 0rem; 
 }
 .tuto ol {
   display: flex;
   gap: 2rem;
   list-style-type: none;
 }
-
-/*@media (min-width: 1024px)*/{
-.tuto ol {
+@media(max-width:64rem) {
+  .tuto ol {
     flex-direction: column;
   }
 }
-
 .tuto li {
   position: relative;
   display: flex;
@@ -248,10 +248,9 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-@media (min-width: 1024px) {
-  #homepage .menus .menus__cards {
-    grid-template-columns: repeat(1, 1fr);
-  }
+
+#homepage .menus .menus__cards {
+  grid-template-columns: repeat(1, 1fr);
 }
 #homepage .menus .menus__cards .new {
   position: relative;
@@ -355,13 +354,14 @@ body {
 }
 
 #page-resto header::before{
-    content: "\f060";
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    transition: transform 200ms;
-    @include mixins.font-awesome($font-weight: 900);
+  content: "\f060";
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  transition: transform 200ms;
+  @include mixins.font-awesome($font-weight: 900);
+  
 }
 
 
@@ -370,11 +370,11 @@ body {
 }
 #page-resto .banner img {
   width: 100%;
-  height: 40vh;
+  height: 65vh;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
-  object-position: center; 
+  object-position: center; /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
   display: block;
 }
 #page-resto .resto__title {
@@ -429,15 +429,15 @@ body {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(1) {
+#page-resto .menus .menus__category .menu-item:nth-chlid(1) {
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(2) {
+#page-resto .menus .menus__category .menu-item:nth-chlid(2) {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(3) {
+#page-resto .menus .menus__category .menu-item:nth-chlid(3) {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
