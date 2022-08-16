@@ -128,7 +128,7 @@ header {
   counter-reset: steps;
   margin-bottom: 2rem;
   background-color: white;
-  padding: 2rem 0rem;
+  padding: 2rem 7rem;
 }
 .tuto ol {
   display: flex;
