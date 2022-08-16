@@ -12,10 +12,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-
-@media (min-width: 1000px) {
-    main {
-      padding: 0 7rem; 
+main {
+  padding: 0 7rem;
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 0 1rem;
   }
 }
 
@@ -69,7 +71,7 @@ header {
   margin: 1rem;
 }
 .explorer p {
-  font-weight: 900;
+  font-weight: 300;
 }
 .explorer button {
   color: white;
@@ -339,11 +341,12 @@ body {
   transform: translateY(-50%);
   font-size: 20px;
   transition: tansform 200ms;
-}
+}*/
 #page-resto .banner img {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  /*j'avais mis center bottom au debut mais j'ai l'impression que ça change rien*/
   display: block;
   height: 65vh;
 }
@@ -445,13 +448,13 @@ body {
   animation: appear 1s;
   animation-fill-mode: both;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(1) {
+#page-resto .menus .menus__category .menu-item:nth-chelid(1) {
   animation-delay: 100ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(2) {
+#page-resto .menus .menus__category .menu-item:nth-chelid(2) {
   animation-delay: 200ms;
 }
-#page-resto .menus .menus__category .menu-item:nth-child(3) {
+#page-resto .menus .menus__category .menu-item:nth-chelid(3) {
   animation-delay: 300ms;
 }
 #page-resto .menus .menus__category .menu-item .menu-item__price {
