@@ -138,9 +138,15 @@ header {
   list-style-type: none;
 }
 @media (max-width: 1000px) {
+  .tuto{
+    padding: 10px;
+  }
   .tuto ol {
     flex-direction: column;
+    padding-right: 12px; 
+    padding-left: 20px;
   }
+  
 }
 .tuto li {
   position: relative;
