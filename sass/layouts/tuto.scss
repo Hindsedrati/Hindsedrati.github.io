@@ -6,12 +6,12 @@
     counter-reset: steps;
     margin-bottom: 2rem;
     background-color: white;
-    padding: 2rem 0rem;
+    padding: 2rem 7rem;
     & ol{
         display: flex;
         gap: 2rem;
         list-style-type: none;
-        @media (max-width: 1000px ){
+        @media (max-width: 1000px){
             flex-direction: column;
         }
     }
