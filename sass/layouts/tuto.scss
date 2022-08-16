@@ -7,15 +7,18 @@
     margin-bottom: 2rem;
     background-color: white;
     padding: 2rem 7rem;
+    @media (max-width: 1024px){
+        padding: 10px;
+    }
     & ol{
         display: flex;
         gap: 2rem;
         list-style-type: none;
-        @media (max-width: 1000px){
+        @media (max-width: 1024px){
             flex-direction: column;
         }
     }
-    
+
     
     & li{
         position: relative;
